@@ -1,0 +1,63 @@
+<nav class="bg-blue-600 text-white shadow-md">
+  <div class="container mx-auto px-4 flex justify-between items-center h-16">
+    <!-- Nome Principal -->
+    <div class="text-lg font-semibold">
+      <a href="/" class="hover:text-blue-200">KGS Corretora</a>
+    </div>
+
+    <!-- Links -->
+    <div class="hidden md:flex space-x-6">
+      <a href="{% url 'seguros:segurodevida' %}" class="hover:text-blue-200">Seguro de Vida</a>
+      <a href="{% url 'seguros:seguroviagem' %}" class="hover:text-blue-200">Seguro Viagem</a>
+      <a href="{% url 'seguros:odonto' %}" class="hover:text-blue-200">Odonto</a>
+      <a href="{% url 'seguros:doctor' %}" class="hover:text-blue-200">Doctor 1</a>
+      <a href="{% url 'seguros:contato' %}" class="hover:text-blue-200">Contato</a>
+      <a href="{% url 'seguros:sobrenos' %}" class="hover:text-blue-200">Sobre Nós</a>
+    </div>
+
+    <!-- Campo de Pesquisa -->
+    <div class="relative">
+      <form method="GET" action="{% url 'seguros:pesquisa' %}">
+        
+        <input 
+        type="search" 
+        placeholder="Buscar..." 
+        name="q"
+        class="rounded-full px-4 py-2 text-black placeholder-gray-500 w-48 focus:outline-none focus:ring-2 focus:ring-blue-300"
+      />
+      <input type="submit" value="">
+      <button class="absolute right-2 top-2 text-gray-600 hover:text-blue-600">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m-2.15-3.15a7 7 0 111.39-1.39m0 0A7 7 0 117 7a7 7 0 018.85 6.46z" />
+        </svg>
+      </button>
+    </div>
+      </form>
+
+    <!-- Menu Mobile -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-white focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <!-- Menu Responsivo -->
+  <div id="mobile-menu" class="hidden md:hidden bg-blue-700">
+    <a href="{% url 'seguros:segurodevida' %}" class="block px-4 py-2 hover:bg-blue-500">Seguro de Vida</a>
+    <a href="{% url 'seguros:seguroviagem' %}" class="block px-4 py-2 hover:bg-blue-500">Seguro Viagem</a>
+    <a href="{% url 'seguros:odonto' %}" class="block px-4 py-2 hover:bg-blue-500">Odonto</a>
+    <a href="{% url 'seguros:doctor' %}" class="block px-4 py-2 hover:bg-blue-500">Doctor 1</a>
+    <a href="{% url 'seguros:contato' %}" class="block px-4 py-2 hover:bg-blue-500">Contato</a>
+    <a href="{% url 'seguros:sobrenos' %}" class="block px-4 py-2 hover:bg-blue-500">Sobre Nós</a>
+  </div>
+</nav>
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>

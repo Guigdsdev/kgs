@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}
+KGS Corretora | Home
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/carrossel.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div>
+    <header class="h-screen relative bg-opacity-75 bg-blend-overlay showcase border-gray-600 border-b-8 flex justify-center items-center bg-no-repeat pb-8 pl-6 flex  items-end bg-cover" style="background-image: url('{% static 'images/familia.jpg' %}');">
+        {% if messages %}
+        
+          <div class="alert alert-success absolute w-full top-0 left-0 z-10 text-center" role="alert">
+            {% for message in messages %}
+              {{ message }}
+            {% endfor %}
+        </div>
+      {% endif %}
+        <div style="padding-top: 35vh;" class="z-10 h-full py-32 md:py-0 text-gray-100 text-center flex items-center flex-col drop-shadow-lg">
+
+          <h1 class="font-semibold text-4xl md:text-5xl w-10/12 md:w-3/4 text-center">
+                KGS Corretora, Seguros e Planos de Saúde, tudo em um só lugar.
+            </h1>
+            <h3 class="text-xl md:text-xl py-5">
+                Cuidamos de você, da sua família e dos seus sonhos. Sempre ao seu lado, nos momentos mais importantes.
+            </h3>
+            <h4 class="text-sm md:text-lg pb-3">
+                Planeje seu amanhã sem preocupações. Escolha um seguro confiável e acessível.
+            </h4>
+
+            </div>
+    </header> 
+
+    <section>
+        <div class="relative w-full max-w-screen-lg mx-auto overflow-hidden mb-8">
+            <!-- Título do Carrossel 1 -->
+            <h2 class="text-gray-600 text-xl font-semibold mb-4 py-3">Seguros</h2>
+          
+            <!-- Container do Carrossel -->
+            <div class="carousel flex space-x-4 overflow-x-scroll scrollbar-hide snap-x snap-mandatory">
+              {% for seguro in lista_seguro %}
+              <div class="snap-center flex-shrink-0 w-[500px] text-center text-2xl text-gray-600 text-bold">
+                {{ seguro }}
+                <a href="{% url 'seguros:detalheseguros' seguro.pk %}">
+                  <img src="{{ seguro.img_seguro.url }}" alt="Imagem {{ forloop.counter }}" class="w-full h-[300px] object-cover rounded-md">
+                </a>
+              </div>
+              {% endfor %}
+            </div>
+          
+            <!-- Botões do Carrossel 1 -->
+            <button 
+              class="prev absolute top-1/2 left-2 transform -translate-y-1/2 bg-blue-600 text-white p-2 rounded-full shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              &#9664;
+            </button>
+            <button 
+              class="next absolute top-1/2 right-2 transform -translate-y-1/2 bg-blue-600 text-white p-2 rounded-full shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              &#9654;
+            </button>
+          </div>
+          
+          <!-- Outro carrossel -->
+
+          <div class="relative w-full max-w-screen-lg mx-auto overflow-hidden">
+            <!-- Título do Carrossel 2 -->
+            <h2 class="text-gray-600 text-xl font-semibold mb-4">Planos de Saúde</h2>
+          
+            <!-- Container do Carrossel -->
+            <div class="carousel flex space-x-4 overflow-x-scroll scrollbar-hide snap-x snap-mandatory">
+              {% for plano in lista_plano %}
+              <div class="snap-center flex-shrink-0 w-[500px]">
+                <a href="{% url 'seguros:detalheplanos' plano.pk %}">
+                  <img src="{{ plano.img_plano.url }}" alt="Imagem {{ forloop.counter }}" class="w-full h-[300px] object-cover rounded-md">
+                </a>
+              </div>
+              {% endfor %}
+            </div>
+          
+            <!-- Botões do Carrossel 2 -->
+            <button 
+              class="prev absolute top-1/2 left-2 transform -translate-y-1/2 bg-blue-600 text-white p-2 rounded-full shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              &#9664;
+            </button>
+            <button 
+              class="next absolute top-1/2 right-2 transform -translate-y-1/2 bg-blue-600 text-white p-2 rounded-full shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              &#9654;
+            </button>
+          </div>
+          
+            <!-- Outro carrossel -->
+
+            <div class="relative w-full max-w-screen-lg mx-auto overflow-hidden">
+                <!-- Título do Carrossel 2 -->
+                <h2 class="text-gray-600 text-xl font-semibold mb-4">Empresas Parceiras</h2>
+              
+                <!-- Container do Carrossel -->
+                <div class="carousel flex space-x-4 overflow-x-scroll scrollbar-hide snap-x snap-mandatory">
+                  {% for empresa in lista_empresa%}
+                  <div class="snap-center flex-shrink-0 w-[500px]">
+                    <img src="{{ empresa.img_empresa.url }}" alt="Imagem {{ forloop.counter }}" class="w-full h-[300px] object-cover rounded-md">
+                  </div>
+                  {% endfor %}
+                </div>
+              
+                <!-- Botões do Carrossel 2 -->
+                <button 
+                  class="prev absolute top-1/2 left-2 transform -translate-y-1/2 bg-blue-600 text-white p-2 rounded-full shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  &#9664;
+                </button>
+                <button 
+                  class="next absolute top-1/2 right-2 transform -translate-y-1/2 bg-blue-600 text-white p-2 rounded-full shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  &#9654;
+                </button>
+              </div>
+
+          <style>
+            .scrollbar-hide {
+              -ms-overflow-style: none; /* IE and Edge */
+              scrollbar-width: none; /* Firefox */
+            }
+          
+            .scrollbar-hide::-webkit-scrollbar {
+              display: none; /* Chrome, Safari, and Opera */
+            }
+          </style>
+          
+          <script>
+            // Função para configurar múltiplos carrosséis
+            document.querySelectorAll('.carousel').forEach((carousel, index) => {
+              const prevButton = carousel.parentNode.querySelector('.prev');
+              const nextButton = carousel.parentNode.querySelector('.next');
+              const scrollAmount = 520; // Tamanho do deslocamento
+          
+              prevButton.addEventListener('click', () => {
+                carousel.scrollBy({
+                  left: -scrollAmount,
+                  behavior: 'smooth',
+                });
+              });
+          
+              nextButton.addEventListener('click', () => {
+                carousel.scrollBy({
+                  left: scrollAmount,
+                  behavior: 'smooth',
+                });
+              });
+            });
+          </script>
+    </section>
+</div>
+{% endblock %}

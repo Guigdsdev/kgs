@@ -1,0 +1,23 @@
+- Criar um site simples
+    - Paginas
+        - Home
+            - Tipos de seguro
+                - Nome do seguro
+                - Foto para exemplificar o seguro
+                - Falando sobre o seguro
+                - Tipo do seguro
+            - Empresas parceiras
+                - Nome da empresa
+                - (Talvez produto oferecido pela empresas)
+            - Formulario de contato
+                - Nome da pessoa
+                - Email
+                - Número
+                - Escolher tipo do seguro
+        - Pagina do seguro
+            - Sobre o seguro
+            - Formulario de informações para entrar em contato
+            - Entrar em contato via wpp
+            - (Talvez Seguros relacionados)
+        - Sobre nós
+            - Pagina simples falando sobre a empresa

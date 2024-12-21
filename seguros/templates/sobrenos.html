@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{%block head%}
+<style>
+    .tela{
+        height: 100vh;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="bg-gray-100 text-gray-800 tela">
+    <!-- Cabeçalho -->
+    <header class="bg-blue-700 text-white py-6">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-3xl font-bold">Sobre Nós</h1>
+        <p class="text-sm mt-2">Saiba mais sobre nosso compromisso em proteger o que é mais importante para você.</p>
+      </div>
+    </header>
+  
+    <!-- Seção de Introdução -->
+    <section class="py-12">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-2xl font-bold mb-4">Nossa Missão</h2>
+        <p class="text-gray-700 max-w-3xl mx-auto">
+          Oferecer soluções de seguros personalizadas, garantindo segurança e tranquilidade em cada etapa da sua vida. Acreditamos que cada cliente é único e merece atenção especial. Nosso objetivo é construir relações de confiança, proporcionando suporte ágil e eficiente para que você viva com mais tranquilidade, sabendo que está protegido.
+        </p>
+      </div>
+    </section>
+    </section>
+</div>
+{% endblock %}
