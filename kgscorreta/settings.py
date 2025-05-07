@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-c0s6(ck^5)5+*x9ua0zt5*8r5uvs-h1q%56hxu#e91z^ce_y8y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['kgscorretoradeseguros.com.br/']
+ALLOWED_HOSTS = ['kgscorretora.com', 'www.kgscorretora.com', '212.85.12.183']
 
 
 # Application definition
